@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="Failed suite [multibrowserTesting]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" parallel="tests" name="EdgeTest(failed)">
+    <parameter name="Browzer" value="Edge"/>
+    <classes>
+      <class name="testscript.AdminuserTest">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="enterUsernameAndPasswword"/>
+          <include name="aftermethod"/>
+        </methods>
+      </class> <!-- testscript.AdminuserTest -->
+    </classes>
+  </test> <!-- EdgeTest(failed) -->
+</suite> <!-- Failed suite [multibrowserTesting] -->
