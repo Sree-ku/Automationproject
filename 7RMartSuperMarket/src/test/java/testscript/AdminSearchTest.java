@@ -11,20 +11,27 @@ import pages.Loginpage;
 
 public class AdminSearchTest extends Base {
 	public Homepage home;
-	public Adminuserpage admin;
+	public AdminuserSearch admin;
+	public Adminuserpage admin1;
   @Test
   public void enterUsernameandUsertype(){
 	  Loginpage loginpage=new Loginpage(driver);
-	  	 loginpage.enterUsernameandPassword("admin","admin");
+	 // String username=ExcelUtility .getStringData(1,0, "Adminsearch");
+	  //String password=ExcelUtility.getStringData(1, 1,"Adminsearch");
+	 loginpage.enterUsernameandPassword("admin","admin");
+	  	
 	    home= loginpage.clickonSigin();
-	    admin=home.clickonMoreinfoAdmin();
+	    admin1=home.clickonMoreinfoAdmin();
+	    
+	   admin.clickonSearchButton().enterUsername("jeans").enterUsertype().searchButton();
+	    
 	     
 	     
 	     
-	     AdminuserSearch search=new AdminuserSearch(driver);
+	  /*   AdminuserSearch search=new AdminuserSearch(driver);
 	     search.enterUsername("Jean");
 	     search.enterUsertype();
-	     search.clickonSearchButton();
+	     search.clickonSearchButton();*/
   
   }
 }

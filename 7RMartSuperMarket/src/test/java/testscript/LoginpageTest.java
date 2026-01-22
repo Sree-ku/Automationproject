@@ -7,6 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import constant.Constant;
 import pages.Homepage;
 import pages.Loginpage;
 import utilities.ExcelUtility;
@@ -22,7 +23,7 @@ Homepage home;
 	  loginpage.enterUsernameandPassword("admin","admin");
 	home=loginpage.clickonSigin();
 	  boolean dashboarddisplayed=loginpage.isDashboardisdisplayed();
-	  Assert.assertTrue(dashboarddisplayed, "Fail to login");
+	  Assert.assertTrue(dashboarddisplayed,Constant.ERRORMESSAGEFORLOGIN);
 	  }
   @Test(groups ="smoke")
   public void enterCorrectUsernameAndWrongPassword() throws IOException {

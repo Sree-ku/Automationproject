@@ -23,19 +23,27 @@ public class AdminuserSearch {
 	@FindBy(xpath="//button[@name='Search']")
 	WebElement searchs;
 	
-	public void clickonSearchButton() {
+	
+	
+	public AdminuserSearch clickonSearchButton() {
 		search.click();
+		return this;
 	}
-	public void enterUsername(String usernamefield) {
+	public AdminuserSearch enterUsername(String usernamefield) {
 		username.sendKeys(usernamefield);
+		return this;
 		
 	}
-	public void enterUsertype() {
+	public AdminuserSearch enterUsertype() {
 		Select select=new Select(usertype);
 		select.selectByIndex(2);
+		return this;
 	}
-	public void searchButton() {
+	public AdminuserSearch searchButton() {
 		searchs.click();
+		return this;
 	}
+	
+
 
 }

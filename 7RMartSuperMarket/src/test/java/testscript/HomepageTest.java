@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import constant.Constant;
 import pages.Homepage;
 import pages.Loginpage;
 import utilities.ExcelUtility;
@@ -28,6 +29,6 @@ public class HomepageTest extends Base {
 	  
 	  String expected= "Login | 7rmart supermarket";
 	  String actual=driver.getTitle();
-	  Assert.assertEquals(expected, actual,"logout failed");
+	  Assert.assertEquals(expected, actual,Constant.ERRORMESSAGEFORLOGOUT);
   }
 }

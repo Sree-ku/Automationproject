@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import constant.Constant;
 import pages.Homepage;
 import pages.Loginpage;
 import pages.ManageNews;
@@ -24,14 +25,15 @@ public class ManageNewsTest extends Base{
 	  news.clickonNew().enterNews("Today is monday").clickonSavebutton();
 	  
 	  boolean adminalertdisplayed=news.isNewsalertdisplayed();
-	  Assert.assertTrue(adminalertdisplayed, "Fail to news");
-	  }
+	  Assert.assertTrue(adminalertdisplayed,Constant.ERRORMESSAGEFORNEWS);
+	  
 	  
 	 /* ManageNews managenew=new ManageNews(driver);
 	  managenew.clickonMoreinfo();
 	  managenew.clickonNew();
 	  managenew.enterNews("Today is Sunday");
 	  managenew.clickonSavebutton();*/
-	  
-  }
+  } 
+  
+}
 

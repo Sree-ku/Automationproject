@@ -29,6 +29,8 @@ public class ManageCategory {
 	@FindBy(xpath="//button[@type='submit']")
 	WebElement save;
 	
+	
+	
 		public ManageCategory clickonNew() {
 		New.click();
 		return this;
