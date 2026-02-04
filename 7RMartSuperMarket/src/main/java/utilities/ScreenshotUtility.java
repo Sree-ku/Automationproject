@@ -5,14 +5,13 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.io.FileHandler;
 
 public class ScreenshotUtility {
-	
+
 	public void captureFailureScreenShot(WebDriver driver, String name) throws IOException {
 		// Interface & method for Capture Screenshot
 		TakesScreenshot scrShot = (TakesScreenshot) driver;
@@ -29,8 +28,5 @@ public class ScreenshotUtility {
 				System.getProperty("user.dir") + "\\OutputScreenshots\\" + name + "_" + timeStamp + ".png");
 		FileHandler.copy(screenShot, finalDestination);// copy screenshot from temp path to project folder
 	}
-	
-	
 
 }
-	

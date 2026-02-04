@@ -17,25 +17,25 @@ public class Adminuserpage {
 	}
 	
 	@FindBy(xpath="//a[@onclick='click_button(1)']")
-	WebElement New;
+	WebElement news;
 	@FindBy(xpath="//input[@name='username']")
-	WebElement Username;
+	WebElement username;
 	@FindBy(xpath="//input[@name='password']")
-	WebElement Password;
+	WebElement password;
 	@FindBy(xpath="//select[@name='user_type']")
-	WebElement Usertype;
+	WebElement usertype;
 	@FindBy(xpath="//button[@name='Create']")
-	WebElement Save;
+	WebElement save;
 	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']")
 	WebElement alert;
 	
 		public Adminuserpage clickonNewbutton() {
-		New.click();
+		news.click();
 		return this;
 	}
 	public Adminuserpage enterUsernameAndPassword(String Usernamefield,String Passwordfield) {
-		Username.sendKeys(Usernamefield);
-		Password.sendKeys(Passwordfield);
+		username.sendKeys(Usernamefield);
+		password.sendKeys(Passwordfield);
 		return this;
 		
 		
@@ -46,10 +46,10 @@ public class Adminuserpage {
 		//select.selectByIndex(1);
 	}*/
 	public Adminuserpage clickonSavebutton() {
-		pageutility.selectByindex(Usertype, 1);
+		pageutility.selectByindex(usertype, 1);
 	
 		
-		Save.click();
+		save.click();
 		return this;
 	}
 	public boolean isAlertisdisplayed() {

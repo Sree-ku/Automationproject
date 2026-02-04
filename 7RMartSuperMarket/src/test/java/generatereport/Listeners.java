@@ -12,10 +12,10 @@ import com.aventstack.extentreports.Status;
 
 import utilities.ExtendReportUtility;
 
-public class Listeners implements ITestListener{
- 
-  ExtentTest test;
-    ExtentReports  extent = ExtendReportUtility.createExtentReports();
+public class Listeners implements ITestListener {
+
+	ExtentTest test;
+	ExtentReports extent = ExtendReportUtility.createExtentReports();
 	ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>();
 
 	public void onTestStart(ITestResult result) {// calls when test methods starts

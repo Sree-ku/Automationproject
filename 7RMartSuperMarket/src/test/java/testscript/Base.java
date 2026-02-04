@@ -26,11 +26,10 @@ public class Base {
 	public Properties properties;
 	public FileInputStream fis;
 
-  
-  @BeforeMethod(alwaysRun = true)
-  @Parameters("Browzer")
-  public void beforeMethod(String browzer) throws Exception {
-	  try {
+	@BeforeMethod(alwaysRun = true)
+	@Parameters("Browzer")
+	public void beforeMethod(String browzer) throws Exception {
+		try {
 			properties = new Properties();
 			fis = new FileInputStream(Constant.CONFIGFILE);
 			properties.load(fis);
@@ -48,24 +47,24 @@ public class Base {
 			throw new Exception("invalid browser");
 		}
 
-	//driver=new ChromeDriver(); 
-	//driver.get("https://groceryapp.uniqassosiates.com/admin");
+		// driver=new ChromeDriver();
+		// driver.get("https://groceryapp.uniqassosiates.com/admin");
 		driver.get(properties.getProperty("url"));
-	driver.manage().window().maximize();
-	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-  }
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+	}
 
-  @AfterMethod(alwaysRun = true)
-  public void aftermethod(ITestResult itResult) throws IOException{
-	  
-     if (itResult.getStatus() == ITestResult.FAILURE) {
-		ScreenshotUtility sc = new ScreenshotUtility();
-		sc.captureFailureScreenShot(driver, itResult.getName());
+	@AfterMethod(alwaysRun = true)
+	public void aftermethod(ITestResult itResult) throws IOException {
+
+		if (itResult.getStatus() == ITestResult.FAILURE) {
+			ScreenshotUtility sc = new ScreenshotUtility();
+			sc.captureFailureScreenShot(driver, itResult.getName());
+		}
+		if (driver != null) {
+			// driver.quit();
+		}
+		// driver.quit();
 	}
-	if (driver != null) {
-		//driver.quit();
-	}
-	  //driver.quit();
-  }
 
 }

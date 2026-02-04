@@ -8,63 +8,42 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.WaitUtility;
 
 public class Loginpage {
-	
-public WebDriver driver;
-   WaitUtility wait=new WaitUtility();
 
-public Loginpage(WebDriver driver) {
-	this.driver=driver;
-	PageFactory.initElements(driver, this);//Elements initialize
-	
-}
-@FindBy(xpath="//input[@name='username']")
-WebElement Username;
-@FindBy(xpath="//input[@name='password']")
-WebElement Password;
-@FindBy(xpath="//button[@type='submit']")
-WebElement Signin;
+	public WebDriver driver;
+	WaitUtility wait = new WaitUtility();
 
-@FindBy(xpath="(//a[@class='small-box-footer'])[2]")
-WebElement dashboard;
+	public Loginpage(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);// Elements initialize
 
-@FindBy(xpath="(//a[@class='small-box-footer'])[2]")
-WebElement dashboard1;
-@FindBy(xpath="(//a[@class='small-box-footer'])[2]")
-WebElement dashboard2;
-@FindBy(xpath="(//a[@class='small-box-footer'])[2]")
-WebElement dashboard3;
+	}
 
+	@FindBy(xpath = "//input[@name='username']")
+	WebElement username;
+	@FindBy(xpath = "//input[@name='password']")
+	WebElement password;
+	@FindBy(xpath = "//button[@type='submit']")
+	WebElement signin;
 
+	@FindBy(xpath = "(//a[@class='small-box-footer'])[2]")
+	WebElement dashboard;
 
-public Loginpage enterUsernameandPassword(String Usernamefield,String Passwordfield) {
-	Username.sendKeys(Usernamefield);
-	Password.sendKeys(Passwordfield);
-	return this;
-	
-}
-public Homepage clickonSigin() {
-	//wait.waitforElementtoclick(driver, Signin);
-	Signin.click();
-	return new Homepage(driver);
-}
-public boolean isDashboardisdisplayed() {
-	return dashboard.isDisplayed();
-	
-}
-public boolean isDashboardisdisplayed1() {
-	return dashboard1.isDisplayed();
-	
-}
-public boolean isDashboardisdisplayed2() {
-	return dashboard2.isDisplayed();
-	
-}
-public boolean isDashboardisdisplayed3() {
-	return dashboard3.isDisplayed();
-	
-}
+		public Loginpage enterUsernameandPassword(String Usernamefield, String Passwordfield) {
+		username.sendKeys(Usernamefield);
+		password.sendKeys(Passwordfield);
+		return this;
 
+	}
 
+	public Homepage clickonSigin() {
+		// wait.waitforElementtoclick(driver, signin);
+		signin.click();
+		return new Homepage(driver);
+	}
 
+	public boolean isDashboardisdisplayed() {
+		return dashboard.isDisplayed();
+
+	}
 
 }

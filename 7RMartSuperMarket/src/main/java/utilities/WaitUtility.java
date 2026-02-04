@@ -8,32 +8,34 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WaitUtility {
-	public void waitforElementtoclick(WebDriver driver,WebElement element) {
-		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(10));
+	public void waitforElementtoclick(WebDriver driver, WebElement element) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.elementToBeClickable(element));
-		
-	}
-	public void waitforelementTobeVisible(WebDriver driver,WebElement element) {
-		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.visibilityOf(element));
-		
-	}
-	public void waitforelementTobeSelected(WebDriver driver,WebElement element) {
-		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.elementToBeSelected(element));
-		
-	}
-	public void waituntilTextIsPresent(WebDriver driver,WebElement element) {
-		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.textToBePresentInElementValue(element,null));
-		
-	}
-	public void waituntilAllElementIsVisible(WebDriver driver,WebElement element) {
-		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.visibilityOfAllElements(element,null));
-		
-	}
-	
 
+	}
+
+	public void waitforelementTobeVisible(WebDriver driver, WebElement element) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.visibilityOf(element));
+
+	}
+
+	public void waitforelementTobeSelected(WebDriver driver, WebElement element) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.elementToBeSelected(element));
+
+	}
+
+	public void waituntilTextIsPresent(WebDriver driver, WebElement element) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.textToBePresentInElementValue(element, null));
+
+	}
+
+	public void waituntilAllElementIsVisible(WebDriver driver, WebElement element) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.visibilityOfAllElements(element, null));
+
+	}
 
 }

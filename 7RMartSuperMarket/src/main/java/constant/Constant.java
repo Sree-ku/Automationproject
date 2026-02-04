@@ -8,6 +8,9 @@ public class Constant {
     public static final String ERRORMESSAGEFORLOGIN1="Fail to login";
     public static final String ERRORMESSAGEFORLOGIN2="Fail to login";
     public static final String ERRORMESSAGEFORLOGIN3="Fail to login";
+    
+
+    
     public static final String ERRORMESSAGEFORLOGOUT="logout failed";
     public static final String ERRORMESSAGEFORNEWS="Fail to news login";
     public static final String ERRORMESSAGEFORCATEGORY="fail to category";
