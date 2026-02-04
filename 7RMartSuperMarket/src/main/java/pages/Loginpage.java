@@ -27,6 +27,15 @@ WebElement Signin;
 @FindBy(xpath="(//a[@class='small-box-footer'])[2]")
 WebElement dashboard;
 
+@FindBy(xpath="(//a[@class='small-box-footer'])[2]")
+WebElement dashboard1;
+@FindBy(xpath="(//a[@class='small-box-footer'])[2]")
+WebElement dashboard2;
+@FindBy(xpath="(//a[@class='small-box-footer'])[2]")
+WebElement dashboard3;
+
+
+
 public Loginpage enterUsernameandPassword(String Usernamefield,String Passwordfield) {
 	Username.sendKeys(Usernamefield);
 	Password.sendKeys(Passwordfield);
@@ -42,5 +51,20 @@ public boolean isDashboardisdisplayed() {
 	return dashboard.isDisplayed();
 	
 }
+public boolean isDashboardisdisplayed1() {
+	return dashboard1.isDisplayed();
+	
+}
+public boolean isDashboardisdisplayed2() {
+	return dashboard2.isDisplayed();
+	
+}
+public boolean isDashboardisdisplayed3() {
+	return dashboard3.isDisplayed();
+	
+}
+
+
+
 
 }

@@ -25,9 +25,13 @@ public class ManageCategory {
 	WebElement choosefile;
 	@FindBy(xpath="//label[text()='Show On Top Menu']")
 	WebElement showtopmenu;
-	
+	@FindBy(xpath="//label[text()='Show On Left Menu']")
+	WebElement showleftmenu;
 	@FindBy(xpath="//button[@type='submit']")
 	WebElement save;
+	
+	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']")
+	WebElement alertcategory;
 	
 	
 	
@@ -56,6 +60,10 @@ public class ManageCategory {
 	public ManageCategory clickonSavebutton() {
 		save.click();
 		return this;
+	}
+	public boolean iscategoryisdisplayed() {
+		return alertcategory.isDisplayed();
+		
 	}
 	
 	

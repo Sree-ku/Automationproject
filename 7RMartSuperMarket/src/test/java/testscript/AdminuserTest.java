@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import constant.Constant;
 import pages.Adminuserpage;
 import pages.Homepage;
 import pages.Loginpage;
@@ -28,7 +29,7 @@ public class AdminuserTest extends Base{
 	   admin.clickonNewbutton().enterUsernameAndPassword(faker.getFakeFirstName(),faker.getPassword()).clickonSavebutton();
 
 		boolean admindisplayed=admin.isAlertisdisplayed();
-		Assert.assertTrue(admindisplayed,"Fail to admin");
+		Assert.assertTrue(admindisplayed,Constant.ERRORMESSAGEFORADMINUSER);
 	
 	 /* Adminuserpage adminuser=new Adminuserpage(driver);
 	 adminuser.clickonMoreinfo();

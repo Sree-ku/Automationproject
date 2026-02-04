@@ -30,22 +30,32 @@ Homepage home;
 	  Loginpage loginpage=new Loginpage(driver);
 	 // String username=ExcelUtility.getStringData(2, 0, "Loginpage");
 	  //String password=ExcelUtility.getStringData(2, 1, "Loginpage");
-	  loginpage.enterUsernameandPassword("admin","1234");
-	  loginpage.clickonSigin();
+	 loginpage.enterUsernameandPassword("admin","1234");
+	 home= loginpage.clickonSigin();
+	 boolean dashboarddisplayed=loginpage.isDashboardisdisplayed1();
+	  Assert.assertTrue(dashboarddisplayed,Constant.ERRORMESSAGEFORLOGIN1);
+	  
 	  }
   @Test(dataProvider = "cerenditials")
   public void enterWrongUsernameAndCorrectPassword(String Username,String Password) {
 	  Loginpage loginpage=new Loginpage(driver); 
 	  loginpage.enterUsernameandPassword(Username,Password);
-	  loginpage.clickonSigin();
+	 home= loginpage.clickonSigin();
+	 boolean dashboarddisplayed=loginpage.isDashboardisdisplayed2();
+	  Assert.assertTrue(dashboarddisplayed,Constant.ERRORMESSAGEFORLOGIN2);
+	  
 	  }
   @Test
   public void enterWrongUsernameAndWrongPassword() throws IOException {
 	  Loginpage loginpage=new Loginpage(driver);
-	  String username=ExcelUtility.getStringData(3, 0,"Loginpage");
-	  String password=ExcelUtility.getStringData(3, 1,"Loginpage");
-	  loginpage.enterUsernameandPassword(username,password);
+	  //String username=ExcelUtility.getStringData(3, 0,"Loginpage");
+	  //String password=ExcelUtility.getStringData(3, 1,"Loginpage");
+	  loginpage.enterUsernameandPassword("admin","admin");
 	  loginpage.clickonSigin();
+	  boolean dashboarddisplayed=loginpage.isDashboardisdisplayed3();
+	  Assert.assertTrue(dashboarddisplayed,Constant.ERRORMESSAGEFORLOGIN3);
+	  
+
 	  }
   @DataProvider(name="cerenditials")
   public Object[][] data(){

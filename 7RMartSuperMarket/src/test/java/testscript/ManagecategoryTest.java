@@ -3,8 +3,10 @@ package testscript;
 import java.io.IOException;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import constant.Constant;
 import pages.Homepage;
 import pages.Loginpage;
 import pages.ManageCategory;
@@ -23,8 +25,12 @@ public class ManagecategoryTest extends Base {
 	  loginpage.enterUsernameandPassword("admin", "admin");
 	 
 	 home= loginpage.clickonSigin();
+	
 	 category=home.clickonMoreinfoCategory();
 	 category.clickonNew().enterCategory("grapes").clickonDiscount().uploadChoosefile().clickonShowTopmenu().clickonSavebutton();
+	 
+	 boolean alert=category.iscategoryisdisplayed();
+	 Assert.assertTrue(alert,Constant.ERRORMESSAGEFORCATEGORY);
 	 
 	  
 	 /* ManageCategory managecategory=new ManageCategory(driver);
